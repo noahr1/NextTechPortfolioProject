@@ -45,7 +45,7 @@
 	border: 1px solid black;
 	margin-left: 10%;
 	margin-top: 9%;
-	position: absolute;
+	position: fixed;
 }
 
 image {
