@@ -1,43 +1,44 @@
-.nav-bar {
-  margin: auto;
-  height: 100%; /* Full height */
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  width: 10%;
-}
-
-.nav-bar div {
-	border: 1px solid black;
-	height: 10%;
-	padding: 5px;
-	text-align: center;
-}
-
-.menu{
-	font-size: 24px;
-}
-
-.nav-bar div:hover {
-	background-color: dimgray;
-}
-
 .nav-icon::before {
 	content: "\002630";
 }
 
-.nav-icon{
-	font-size: 40px;
-	text-align: center;
+.top-bar {
+	display: flex;
+	height: 20%;
+	border: 1px solid black;
 }
 
-image {
+.nav-bar {
+	display: flex;
+	align-items: baseline;
+	flex-direction: column;
+	width: 10%;
+	border: 1px solid black;
+}
+
+.alignment {
+	display: flex;
+	flex-direction: row;
 	width: 100%;
-	height: 100%;
+	height: 80%;
 }
 
-a {
+.content {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border: 1px solid black;
+}
+
+.nav-bar a {
+	border: 1px solid black;
+	height: 15%;
+	padding: 5px;
+	text-align: center;
 	color: black;
+	font-size: 35px;
 	text-decoration: none;
 	cursor: auto;
+	width: 100%;
 }
