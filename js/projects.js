@@ -24,6 +24,20 @@ var projects = [
 		lastEdited: { date: "6/26/2023", time: "3:57pm" },
 		imgSrc: "./projects/test_project_3/image.png"
 	},
+	{
+		name: "Test Project 3",
+		timeCreated: { date: "6/26/2023", time: "3:54pm" },
+		projectLink: "./projects/test_project_3/test_project_3.html",
+		lastEdited: { date: "6/26/2023", time: "3:57pm" },
+		imgSrc: "./projects/test_project_3/image.png"
+	},
+	{
+		name: "Test Project 3",
+		timeCreated: { date: "6/26/2023", time: "3:54pm" },
+		projectLink: "./projects/test_project_3/test_project_3.html",
+		lastEdited: { date: "6/26/2023", time: "3:57pm" },
+		imgSrc: "./projects/test_project_3/image.png"
+	},
 ];
 
 function createTag(tag, value) {
@@ -54,6 +68,7 @@ function generateProjects() {
 		var pic = createImage(project.imgSrc);
 
 		tempDiv.append(title, timeCreated, lastEdited, pic);
+		tempDiv.classList.add("project-container");
 		content.append(tempDiv);
 	}
 }
@@ -65,8 +80,11 @@ nav_icon.addEventListener("click", (e) => {
 	for(var i = 0; i < nav_bar.children.length; i++) {
 		if(nav_bar.children[i].style.display === "none") {
 			nav_bar.children[i].style.display = "block";
+			nav_bar.style.width = "10%";
 		}else {
 			nav_bar.children[i].style.display = "none";
+			nav_bar.style.width = 0;
+			content.style.width = "100%";
 		}
 	}
 });

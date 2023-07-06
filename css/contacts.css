@@ -32,8 +32,7 @@
 
 .nav-bar a {
 	border: 1px solid black;
-	height: 80px;
-	justify-content: center;
+	height: 100%;
 	text-align: center;
 	color: black;
 	font-size: 35px;
@@ -49,16 +48,7 @@
 	height: 80%;
 }
 
-.project-container {
-	border: 1px solid black;
-	width: 20%;
-	margin: 5px;
-}
-
 .content {
 	width: 90%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 	border: 1px solid black;
 }
