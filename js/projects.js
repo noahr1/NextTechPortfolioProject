@@ -24,20 +24,6 @@ var projects = [
 		lastEdited: { date: "6/26/2023", time: "3:57pm" },
 		imgSrc: "./projects/test_project_3/image.png"
 	},
-	{
-		name: "Test Project 3",
-		timeCreated: { date: "6/26/2023", time: "3:54pm" },
-		projectLink: "./projects/test_project_3/test_project_3.html",
-		lastEdited: { date: "6/26/2023", time: "3:57pm" },
-		imgSrc: "./projects/test_project_3/image.png"
-	},
-	{
-		name: "Test Project 3",
-		timeCreated: { date: "6/26/2023", time: "3:54pm" },
-		projectLink: "./projects/test_project_3/test_project_3.html",
-		lastEdited: { date: "6/26/2023", time: "3:57pm" },
-		imgSrc: "./projects/test_project_3/image.png"
-	},
 ];
 
 function createTag(tag, value) {
@@ -63,11 +49,13 @@ function generateProjects() {
 		
 		var tempDiv = createTag("div", null);
 		var title = createTag("h1", project.name);
-		var timeCreated = createTag("h2", "Date Created: " + project.timeCreated.date + " Time Created: " + project.timeCreated.time);
-		var lastEdited = createTag("h2", "Date Last Edited: " + project.lastEdited.date + " Time Last Edited: " + project.lastEdited.time);
+		var dateCreated = createTag("h2", "Date Created: " + project.timeCreated.date);
+		var timeCreated = createTag("h2", "Time Created: " + project.timeCreated.time);
+		var datelastEdited = createTag("h2", "Date Last Edited: " + project.lastEdited.date);
+		var timelastEdited = createTag("h2", "Time Last Edited: " + project.lastEdited.time);
 		var pic = createImage(project.imgSrc);
 
-		tempDiv.append(title, timeCreated, lastEdited, pic);
+		tempDiv.append(title, dateCreated, timeCreated, datelastEdited, timelastEdited, pic);
 		tempDiv.classList.add("project-container");
 		content.append(tempDiv);
 	}
