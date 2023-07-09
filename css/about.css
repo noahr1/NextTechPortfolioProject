@@ -55,8 +55,7 @@
 
 .introduction-card {
 	border: 1px solid black;
-	width: 15%;
-	height: 250px;
+	width: 20%;
 	margin: 5px;
 }
 
@@ -64,8 +63,23 @@
 	text-align: center;
 }
 
-.introduction-card div {
-	background-color: blue;
+.introduction-card img {
 	width: 200px;
 	height: 150px;
+}
+
+.main {
+	border: 1px solid black;
+	width: 6%;
+	text-align: center;
+	margin-right: 15px;
+}
+
+.main a {
+	justify-content: center;
+	text-align: center;
+	color: black;
+	font-size: 25px;
+	text-decoration: none;
+	cursor: auto;
 }
