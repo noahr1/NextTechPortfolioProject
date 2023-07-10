@@ -4,25 +4,32 @@ var nav_bar = document.querySelector(".nav-bar");
 
 var projects = [
 	{
-		name: "Test Project 1",
+		name: "Adventure Game",
 		timeCreated: { date: "6/26/2023", time: "3:40pm" },
-		projectLink: "./projects/test_project_1/test_project_1.html",
+		projectLink: "https://replit.com/@NoahReynolds9/Make-your-own-Adventure-Noah",
 		lastEdited: { date: "6/26/2023", time: "3:45pm" },
-		imgSrc: "./projects/test_project_1/image.png"
+		imgSrc: "../projects/Adventure_Game/adventure_game_thumbnail.png"
 	},
 	{
-		name: "Test Project 2",
+		name: "Machine Chart",
 		timeCreated: { date: "6/26/2023", time: "3:50pm" },
-		projectLink: "./projects/test_project_1/test_project_2.html",
+		projectLink: "../projects/Machine_Chart/machine_chart.html",
 		lastEdited: { date: "6/26/2023", time: "3:51pm" },
-		imgSrc: "./projects/test_project_2/image.png"
+		imgSrc: "../projects/Machine_Chart/machine_chart_thumbnail.png"
 	},
 	{
-		name: "Test Project 3",
+		name: "Pixel Texture Maker",
 		timeCreated: { date: "6/26/2023", time: "3:54pm" },
-		projectLink: "./projects/test_project_3/test_project_3.html",
+		projectLink: "https://noahr1.github.io/Pixel_Texture_Maker/",
 		lastEdited: { date: "6/26/2023", time: "3:57pm" },
-		imgSrc: "./projects/test_project_3/image.png"
+		imgSrc: "../projects/Pixel_Texture_Maker/pixel_texture_maker_thumbnail.png"
+	},
+	{
+		name: "Quiz Project",
+		timeCreated: { date: "6/26/2023", time: "3:54pm" },
+		projectLink: "https://replit.com/@NoahReynolds9/Quiz-Project",
+		lastEdited: { date: "6/26/2023", time: "3:57pm" },
+		imgSrc: "../projects/Quiz_Project/quiz_thumbnail.png"
 	},
 ];
 
@@ -34,8 +41,17 @@ function createTag(tag, value) {
 	return tempTag;
 }
 
+function createLink(path) {
+	var tempLink = document.createElement("a");
+	if(path) {
+		tempLink.href = path;
+		tempLink.setAttribute("target", "_blank");
+	}
+	return tempLink;
+}
+
 function createImage(path) {
-	var tempImage = document.createElement("image");
+	var tempImage = document.createElement("img");
 	if(path) {
 		tempImage.src = path;
 	}
@@ -49,15 +65,21 @@ function generateProjects() {
 		
 		var tempDiv = createTag("div", null);
 		var title = createTag("h1", project.name);
-		var dateCreated = createTag("h2", "Date Created: " + project.timeCreated.date);
-		var timeCreated = createTag("h2", "Time Created: " + project.timeCreated.time);
-		var datelastEdited = createTag("h2", "Date Last Edited: " + project.lastEdited.date);
-		var timelastEdited = createTag("h2", "Time Last Edited: " + project.lastEdited.time);
+		var link = createLink(project.projectLink);
+		var dateCreated = createTag("p", "Date Created: " + project.timeCreated.date);
+		var timeCreated = createTag("p", "Time Created: " + project.timeCreated.time);
+		var datelastEdited = createTag("p", "Date Last Edited: " + project.lastEdited.date);
+		var timelastEdited = createTag("p", "Time Last Edited: " + project.lastEdited.time);
 		var pic = createImage(project.imgSrc);
-
-		tempDiv.append(title, dateCreated, timeCreated, datelastEdited, timelastEdited, pic);
+		tempDiv.append(title, dateCreated, timeCreated, datelastEdited, timelastEdited, pic, link);
 		tempDiv.classList.add("project-container");
 		content.append(tempDiv);
+		tempDiv.onclick = function(e) {
+			var elm = e.target.parentElement;
+			if(elm.classList.value === "project-container") {
+				elm.children[6].click();
+			}
+		}
 	}
 }
 
